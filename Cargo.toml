@@ -1,0 +1,10 @@
+[package]
+name = "ffmpegthumbnailer"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+
+[dependencies]
+ffmpeg-next = "7.0.4"
+image = "0.25.2"
+clap = { version = "4.0", features = ["derive"] }

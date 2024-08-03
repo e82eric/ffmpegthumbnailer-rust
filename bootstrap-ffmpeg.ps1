@@ -1,4 +1,11 @@
 $ErrorActionPreference = 'stop'
+
+$7zPath = Get-Command 7z -ErrorAction SilentlyContinue
+if (-not $7zPath) {
+  Write-Error "7-Zip is not installed or not found in the system PATH."
+  exit 1
+}
+
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
 
 $archiveName = "ffmpeg-release-full-shared"
